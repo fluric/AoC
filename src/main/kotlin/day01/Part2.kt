@@ -1,3 +1,8 @@
+package day01
+
+import println
+import readInput
+
 fun main() {
     val writtenDigits = mapOf(
         "one" to 1,
@@ -32,7 +37,7 @@ fun main() {
     }
 
     fun solveLine(line: String): Int {
-        val modifiedLine = modifyLine(line);
+        val modifiedLine = modifyLine(line)
 
         val digits = modifiedLine.toCharArray().filter { c -> Character.isDigit(c) }
         return digits.first().digitToInt() * 10 + digits.last().digitToInt()
@@ -43,9 +48,9 @@ fun main() {
     }
 
     // test
-    val testInput = readInput("Day01_2_test")
+    val testInput = readInput("day01/test_2")
     check(solve(testInput) == 281)
 
-    val input = readInput("Day01")
+    val input = readInput("day01/input")
     solve(input).println()
 }

@@ -1,3 +1,8 @@
+package day01
+
+import println
+import readInput
+
 fun main() {
     fun solveLine(line: String): Int {
         val digits = line.toCharArray().filter { c -> Character.isDigit(c) }
@@ -9,9 +14,9 @@ fun main() {
     }
 
     // test
-    val testInput = readInput("Day01_1_test")
+    val testInput = readInput("day01/test_1")
     check(solve(testInput) == 142)
 
-    val input = readInput("Day01")
+    val input = readInput("day01/input")
     solve(input).println()
 }
