@@ -21,17 +21,17 @@ public class Part2 {
 
     private static int solve(List<String> input) {
         var matchesList = input.stream().map(Part2::solveLine).toList();
-        var cardsCount = new ArrayList<>(Stream.generate(() -> 1).limit(input.size()).toList());
+        var cardsCount = Stream.generate(() -> 1).limit(input.size()).mapToInt(Integer::intValue).toArray();
 
         for (var i = 0; i < input.size(); i++) {
             var matches = matchesList.get(i);
 
             for (var j = i + 1; j < input.size() && j < i + matches + 1; j++) {
-                cardsCount.set(j, cardsCount.get(j) + cardsCount.get(i));
+                cardsCount[j] += cardsCount[i];
             }
         }
 
-        return cardsCount.stream().mapToInt(Integer::intValue).sum();
+        return Arrays.stream(cardsCount).sum();
     }
 
     private static int solveLine(String line) {
