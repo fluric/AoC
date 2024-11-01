@@ -29,4 +29,10 @@ public class Utility {
             throw new RuntimeException("Expected %s but got %s".formatted(expected, actual));
         }
     }
+
+    public static void check(long expected, long actual) {
+        if (expected != actual) {
+            throw new RuntimeException("Expected %s but got %s".formatted(expected, actual));
+        }
+    }
 }
