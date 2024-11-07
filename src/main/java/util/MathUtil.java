@@ -1,5 +1,7 @@
 package util;
 
+import java.math.BigInteger;
+
 public class MathUtil {
     public static long lcm(long number1, long number2) {
         if (number1 == 0 || number2 == 0)
@@ -21,5 +23,22 @@ public class MathUtil {
 
             return gcd(biggerValue % smallerValue, smallerValue);
         }
+    }
+
+    public static long getPascalCoefficient(int n, int i) {
+        return factorial(n).divide(factorial(i).multiply(factorial(n - i))).longValue();
+    }
+
+    public static BigInteger factorial(int k) {
+        if (k == 0 || k == 1) {
+            return BigInteger.ONE;
+        }
+
+        var sum = BigInteger.ONE;
+        for (int i = 1; i <= k; i++) {
+            sum = sum.multiply(BigInteger.valueOf(i));
+        }
+
+        return sum;
     }
 }
