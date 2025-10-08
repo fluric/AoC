@@ -7,10 +7,10 @@ import java.util.List;
 public class Part1 {
 
     public static void main(String[] args) {
-        var testInput = Utility.readLines("day0x/test_1");
+        var testInput = Utility.readLines("dayxx/test_1");
         Utility.check(0, solve(testInput));
 
-        var input = Utility.readLines("day0x/input");
+        var input = Utility.readLines("dayxx/input");
         System.out.println(solve(input));
     }
 
